@@ -4,7 +4,7 @@ import android.content.Context;
 
 import javax.inject.Singleton;
 
-import cn.datamining.dat.data.remote.AccountApi;
+import cn.datamining.dat.api.AccountApi;
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;

@@ -2,11 +2,12 @@ package cn.datamining.dat.ui.login;
 
 import javax.inject.Inject;
 
+import cn.datamining.dat.api.AccountApi;
 import cn.datamining.dat.base.mvpbase.BasePresenter;
-import cn.datamining.dat.common.Constants;
-import cn.datamining.dat.data.remote.AccountApi;
+import cn.datamining.dat.bean.User;
+import cn.datamining.dat.db.UserDao;
+import cn.datamining.dat.utils.Constants;
 import cn.datamining.dat.components.retrofit.Callback;
-import cn.datamining.dat.data.remote.entity.User;
 import cn.datamining.dat.di.PerActivity;
 
 /**
@@ -18,10 +19,12 @@ import cn.datamining.dat.di.PerActivity;
 public class LoginPresenter extends BasePresenter<LoginContract.LoginView> implements LoginContract.LoginPresenter {
 
     private AccountApi accountApi;
+    private UserDao userDao;
 
     @Inject
-    public LoginPresenter(AccountApi accountApi) {
+    public LoginPresenter(AccountApi accountApi,UserDao userDao) {
         this.accountApi = accountApi;
+        this.userDao = userDao;
     }
 
     @Override
@@ -35,8 +38,8 @@ public class LoginPresenter extends BasePresenter<LoginContract.LoginView> imple
 
             @Override
             public void onNext(User user) {
-
                 mView.showUser(user);
+                userDao.insertOrReplace(user);
             }
 
             @Override

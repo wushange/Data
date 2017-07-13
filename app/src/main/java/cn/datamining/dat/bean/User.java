@@ -1,13 +1,18 @@
-package cn.datamining.dat.data.remote.entity;
+package cn.datamining.dat.bean;
 
-import java.io.Serializable;
+import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Transient;
+import org.greenrobot.greendao.annotation.Generated;
 
 /**
  * Created by wushange on 2017/7/12.
  */
 
+@Entity
 public class User {
 
+    @Id
     private String userId;
     private String userName;
     private String nickName;
@@ -19,7 +24,28 @@ public class User {
     private String userCompany;
     private String userPosition;
     private String version;
+    @Transient
     private AuthContext authContext;
+
+    @Generated(hash = 1917211925)
+    public User(String userId, String userName, String nickName, String aliasName, String userHead, String userPhone, String userEmail, String birthday, String userCompany,
+            String userPosition, String version) {
+        this.userId = userId;
+        this.userName = userName;
+        this.nickName = nickName;
+        this.aliasName = aliasName;
+        this.userHead = userHead;
+        this.userPhone = userPhone;
+        this.userEmail = userEmail;
+        this.birthday = birthday;
+        this.userCompany = userCompany;
+        this.userPosition = userPosition;
+        this.version = version;
+    }
+
+    @Generated(hash = 586692638)
+    public User() {
+    }
 
     public String getUserId() {
         return userId;
@@ -117,7 +143,8 @@ public class User {
         this.authContext = authContext;
     }
 
-    class AuthContext implements Serializable {
+    @Entity
+    class AuthContext {
 
         /**
          * username : 18519232094

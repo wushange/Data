@@ -1,4 +1,4 @@
-package cn.datamining.dat.data.remote.model;
+package cn.datamining.dat.bean;
 
 /**
  * Created by wanglj on 16/7/4.

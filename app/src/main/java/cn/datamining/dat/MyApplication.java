@@ -1,5 +1,7 @@
 package cn.datamining.dat;
 
+import com.facebook.stetho.Stetho;
+
 import cn.datamining.dat.base.BaseApplication;
 import cn.datamining.dat.di.component.ApplicationComponent;
 import cn.datamining.dat.di.component.DaggerApplicationComponent;
@@ -12,15 +14,16 @@ import cn.datamining.dat.di.module.ApplicationModule;
 public class MyApplication extends BaseApplication {
 
     private ApplicationComponent mApplicationComponent;
+
     @Override
     public void onCreate() {
         super.onCreate();
         initComponent();
+        Stetho.initializeWithDefaults(this);
     }
 
     @Override
     public void exit() {
-
         removeAllActivity();
     }
 

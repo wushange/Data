@@ -7,12 +7,15 @@ import android.view.View;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import cn.datamining.dat.MainActivity;
 import cn.datamining.dat.R;
 import cn.datamining.dat.base.BaseActivity;
-import cn.datamining.dat.data.remote.entity.User;
+import cn.datamining.dat.bean.User;
+import cn.datamining.dat.db.UserDao;
 
 /**
  * Created by wushange on 2017/7/12.
@@ -22,6 +25,8 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
 
     @Inject
     LoginPresenter loginPresenter;
+    @Inject
+    UserDao userDao;
 
     @Override
     public int bindLayout() {
@@ -70,7 +75,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
 
     @Override
     public String getUserName() {
-        return "18519232094";
+        return "15645950466";
     }
 
     @Override
@@ -82,6 +87,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
     public void showUser(User user) {
         LogUtils.e(user.toString());
         ToastUtils.showLong(user.toString());
-
+       List<User> users=  userDao.queryBuilder().build().list();
+        LogUtils.e("-db result-" + users.size() +"--" + users.toString());
     }
 }

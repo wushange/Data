@@ -2,7 +2,7 @@ package cn.datamining.dat.ui.login;
 
 
 import cn.datamining.dat.base.mvpbase.BaseView;
-import cn.datamining.dat.data.remote.entity.User;
+import cn.datamining.dat.bean.User;
 
 /**
  * Created by sll on 2016/5/11.

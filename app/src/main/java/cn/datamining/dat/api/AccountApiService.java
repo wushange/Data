@@ -1,7 +1,7 @@
-package cn.datamining.dat.data.remote;
+package cn.datamining.dat.api;
 
-import cn.datamining.dat.data.remote.entity.User;
-import cn.datamining.dat.data.remote.model.BaseResponse;
+import cn.datamining.dat.bean.User;
+import cn.datamining.dat.bean.BaseResponse;
 import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

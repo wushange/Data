@@ -4,6 +4,8 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.view.LayoutInflater;
 
+import com.facebook.stetho.okhttp3.StethoInterceptor;
+
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
@@ -37,6 +39,7 @@ public class ApplicationModule {
                 .retryOnConnectionFailure(true);
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        builder.addNetworkInterceptor(new StethoInterceptor());
         builder.addInterceptor(logging);
         return builder.build();
     }

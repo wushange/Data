@@ -1,4 +1,4 @@
-package cn.datamining.dat.data.remote.model;
+package cn.datamining.dat.bean;
 
 
 import com.blankj.utilcode.util.LogUtils;
