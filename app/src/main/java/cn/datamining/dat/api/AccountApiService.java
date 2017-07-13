@@ -1,6 +1,6 @@
 package cn.datamining.dat.api;
 
-import cn.datamining.dat.bean.User;
+import cn.datamining.dat.db.User;
 import cn.datamining.dat.bean.BaseResponse;
 import io.reactivex.Observable;
 import retrofit2.http.Field;

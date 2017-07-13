@@ -7,7 +7,7 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import cn.datamining.dat.utils.Constants;
 import cn.datamining.dat.components.retrofit.Callback;
 import cn.datamining.dat.components.retrofit.ExceptionSubscriber;
-import cn.datamining.dat.bean.User;
+import cn.datamining.dat.db.User;
 import cn.datamining.dat.bean.BaseResponseFunc;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;

@@ -14,7 +14,7 @@ import javax.inject.Inject;
 import cn.datamining.dat.MainActivity;
 import cn.datamining.dat.R;
 import cn.datamining.dat.base.BaseActivity;
-import cn.datamining.dat.bean.User;
+import cn.datamining.dat.db.User;
 import cn.datamining.dat.db.UserDao;
 
 /**
@@ -75,7 +75,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
 
     @Override
     public String getUserName() {
-        return "15645950466";
+        return "18519232094";
     }
 
     @Override

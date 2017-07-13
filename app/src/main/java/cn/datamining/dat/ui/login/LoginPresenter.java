@@ -4,7 +4,7 @@ import javax.inject.Inject;
 
 import cn.datamining.dat.api.AccountApi;
 import cn.datamining.dat.base.mvpbase.BasePresenter;
-import cn.datamining.dat.bean.User;
+import cn.datamining.dat.db.User;
 import cn.datamining.dat.db.UserDao;
 import cn.datamining.dat.utils.Constants;
 import cn.datamining.dat.components.retrofit.Callback;

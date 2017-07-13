@@ -1,4 +1,4 @@
-package cn.datamining.dat.bean;
+package cn.datamining.dat.db;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
@@ -12,7 +12,9 @@ import org.greenrobot.greendao.annotation.Generated;
 @Entity
 public class User {
 
-    @Id
+    @Id(autoincrement = true)
+    private long id;
+    private String testUpdate;
     private String userId;
     private String userName;
     private String nickName;
@@ -27,9 +29,11 @@ public class User {
     @Transient
     private AuthContext authContext;
 
-    @Generated(hash = 1917211925)
-    public User(String userId, String userName, String nickName, String aliasName, String userHead, String userPhone, String userEmail, String birthday, String userCompany,
-            String userPosition, String version) {
+    @Generated(hash = 64484547)
+    public User(long id, String testUpdate, String userId, String userName, String nickName, String aliasName, String userHead, String userPhone, String userEmail, String birthday,
+            String userCompany, String userPosition, String version) {
+        this.id = id;
+        this.testUpdate = testUpdate;
         this.userId = userId;
         this.userName = userName;
         this.nickName = nickName;
@@ -45,6 +49,22 @@ public class User {
 
     @Generated(hash = 586692638)
     public User() {
+    }
+
+    public String getTestUpdate() {
+        return testUpdate;
+    }
+
+    public void setTestUpdate(String testUpdate) {
+        this.testUpdate = testUpdate;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getUserId() {
