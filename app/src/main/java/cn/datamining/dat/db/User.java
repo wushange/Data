@@ -1,9 +1,9 @@
 package cn.datamining.dat.db;
 
 import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Transient;
-import org.greenrobot.greendao.annotation.Generated;
 
 /**
  * Created by wushange on 2017/7/12.
@@ -12,9 +12,7 @@ import org.greenrobot.greendao.annotation.Generated;
 @Entity
 public class User {
 
-    @Id(autoincrement = true)
-    private long id;
-    private String testUpdate;
+    @Id
     private String userId;
     private String userName;
     private String nickName;
@@ -29,11 +27,14 @@ public class User {
     @Transient
     private AuthContext authContext;
 
-    @Generated(hash = 64484547)
-    public User(long id, String testUpdate, String userId, String userName, String nickName, String aliasName, String userHead, String userPhone, String userEmail, String birthday,
-            String userCompany, String userPosition, String version) {
-        this.id = id;
-        this.testUpdate = testUpdate;
+
+    @Generated(hash = 586692638)
+    public User() {
+    }
+
+    @Generated(hash = 1917211925)
+    public User(String userId, String userName, String nickName, String aliasName, String userHead, String userPhone, String userEmail, String birthday, String userCompany,
+            String userPosition, String version) {
         this.userId = userId;
         this.userName = userName;
         this.nickName = nickName;
@@ -45,26 +46,6 @@ public class User {
         this.userCompany = userCompany;
         this.userPosition = userPosition;
         this.version = version;
-    }
-
-    @Generated(hash = 586692638)
-    public User() {
-    }
-
-    public String getTestUpdate() {
-        return testUpdate;
-    }
-
-    public void setTestUpdate(String testUpdate) {
-        this.testUpdate = testUpdate;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getId() {
-        return id;
     }
 
     public String getUserId() {

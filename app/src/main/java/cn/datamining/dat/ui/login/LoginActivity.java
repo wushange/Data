@@ -75,7 +75,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
 
     @Override
     public String getUserName() {
-        return "18519232094";
+        return "15645950466";
     }
 
     @Override

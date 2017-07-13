@@ -19,7 +19,7 @@ android {
     }
 }
 greendao {
-    schemaVersion 2
+    schemaVersion 1
     daoPackage 'cn.datamining.dat.db'
     targetGenDir 'src/main/java'
 }

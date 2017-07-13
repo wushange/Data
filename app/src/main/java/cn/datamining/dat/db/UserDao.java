@@ -13,7 +13,7 @@ import org.greenrobot.greendao.database.DatabaseStatement;
 /** 
  * DAO for table "USER".
 */
-public class UserDao extends AbstractDao<User, Long> {
+public class UserDao extends AbstractDao<User, String> {
 
     public static final String TABLENAME = "USER";
 
@@ -22,19 +22,17 @@ public class UserDao extends AbstractDao<User, Long> {
      * Can be used for QueryBuilder and for referencing column names.
      */
     public static class Properties {
-        public final static Property Id = new Property(0, long.class, "id", true, "_id");
-        public final static Property TestUpdate = new Property(1, String.class, "testUpdate", false, "TEST_UPDATE");
-        public final static Property UserId = new Property(2, String.class, "userId", false, "USER_ID");
-        public final static Property UserName = new Property(3, String.class, "userName", false, "USER_NAME");
-        public final static Property NickName = new Property(4, String.class, "nickName", false, "NICK_NAME");
-        public final static Property AliasName = new Property(5, String.class, "aliasName", false, "ALIAS_NAME");
-        public final static Property UserHead = new Property(6, String.class, "userHead", false, "USER_HEAD");
-        public final static Property UserPhone = new Property(7, String.class, "userPhone", false, "USER_PHONE");
-        public final static Property UserEmail = new Property(8, String.class, "userEmail", false, "USER_EMAIL");
-        public final static Property Birthday = new Property(9, String.class, "birthday", false, "BIRTHDAY");
-        public final static Property UserCompany = new Property(10, String.class, "userCompany", false, "USER_COMPANY");
-        public final static Property UserPosition = new Property(11, String.class, "userPosition", false, "USER_POSITION");
-        public final static Property Version = new Property(12, String.class, "version", false, "VERSION");
+        public final static Property UserId = new Property(0, String.class, "userId", true, "USER_ID");
+        public final static Property UserName = new Property(1, String.class, "userName", false, "USER_NAME");
+        public final static Property NickName = new Property(2, String.class, "nickName", false, "NICK_NAME");
+        public final static Property AliasName = new Property(3, String.class, "aliasName", false, "ALIAS_NAME");
+        public final static Property UserHead = new Property(4, String.class, "userHead", false, "USER_HEAD");
+        public final static Property UserPhone = new Property(5, String.class, "userPhone", false, "USER_PHONE");
+        public final static Property UserEmail = new Property(6, String.class, "userEmail", false, "USER_EMAIL");
+        public final static Property Birthday = new Property(7, String.class, "birthday", false, "BIRTHDAY");
+        public final static Property UserCompany = new Property(8, String.class, "userCompany", false, "USER_COMPANY");
+        public final static Property UserPosition = new Property(9, String.class, "userPosition", false, "USER_POSITION");
+        public final static Property Version = new Property(10, String.class, "version", false, "VERSION");
     }
 
 
@@ -50,19 +48,17 @@ public class UserDao extends AbstractDao<User, Long> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"USER\" (" + //
-                "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ," + // 0: id
-                "\"TEST_UPDATE\" TEXT," + // 1: testUpdate
-                "\"USER_ID\" TEXT," + // 2: userId
-                "\"USER_NAME\" TEXT," + // 3: userName
-                "\"NICK_NAME\" TEXT," + // 4: nickName
-                "\"ALIAS_NAME\" TEXT," + // 5: aliasName
-                "\"USER_HEAD\" TEXT," + // 6: userHead
-                "\"USER_PHONE\" TEXT," + // 7: userPhone
-                "\"USER_EMAIL\" TEXT," + // 8: userEmail
-                "\"BIRTHDAY\" TEXT," + // 9: birthday
-                "\"USER_COMPANY\" TEXT," + // 10: userCompany
-                "\"USER_POSITION\" TEXT," + // 11: userPosition
-                "\"VERSION\" TEXT);"); // 12: version
+                "\"USER_ID\" TEXT PRIMARY KEY NOT NULL ," + // 0: userId
+                "\"USER_NAME\" TEXT," + // 1: userName
+                "\"NICK_NAME\" TEXT," + // 2: nickName
+                "\"ALIAS_NAME\" TEXT," + // 3: aliasName
+                "\"USER_HEAD\" TEXT," + // 4: userHead
+                "\"USER_PHONE\" TEXT," + // 5: userPhone
+                "\"USER_EMAIL\" TEXT," + // 6: userEmail
+                "\"BIRTHDAY\" TEXT," + // 7: birthday
+                "\"USER_COMPANY\" TEXT," + // 8: userCompany
+                "\"USER_POSITION\" TEXT," + // 9: userPosition
+                "\"VERSION\" TEXT);"); // 10: version
     }
 
     /** Drops the underlying database table. */
@@ -74,187 +70,170 @@ public class UserDao extends AbstractDao<User, Long> {
     @Override
     protected final void bindValues(DatabaseStatement stmt, User entity) {
         stmt.clearBindings();
-        stmt.bindLong(1, entity.getId());
- 
-        String testUpdate = entity.getTestUpdate();
-        if (testUpdate != null) {
-            stmt.bindString(2, testUpdate);
-        }
  
         String userId = entity.getUserId();
         if (userId != null) {
-            stmt.bindString(3, userId);
+            stmt.bindString(1, userId);
         }
  
         String userName = entity.getUserName();
         if (userName != null) {
-            stmt.bindString(4, userName);
+            stmt.bindString(2, userName);
         }
  
         String nickName = entity.getNickName();
         if (nickName != null) {
-            stmt.bindString(5, nickName);
+            stmt.bindString(3, nickName);
         }
  
         String aliasName = entity.getAliasName();
         if (aliasName != null) {
-            stmt.bindString(6, aliasName);
+            stmt.bindString(4, aliasName);
         }
  
         String userHead = entity.getUserHead();
         if (userHead != null) {
-            stmt.bindString(7, userHead);
+            stmt.bindString(5, userHead);
         }
  
         String userPhone = entity.getUserPhone();
         if (userPhone != null) {
-            stmt.bindString(8, userPhone);
+            stmt.bindString(6, userPhone);
         }
  
         String userEmail = entity.getUserEmail();
         if (userEmail != null) {
-            stmt.bindString(9, userEmail);
+            stmt.bindString(7, userEmail);
         }
  
         String birthday = entity.getBirthday();
         if (birthday != null) {
-            stmt.bindString(10, birthday);
+            stmt.bindString(8, birthday);
         }
  
         String userCompany = entity.getUserCompany();
         if (userCompany != null) {
-            stmt.bindString(11, userCompany);
+            stmt.bindString(9, userCompany);
         }
  
         String userPosition = entity.getUserPosition();
         if (userPosition != null) {
-            stmt.bindString(12, userPosition);
+            stmt.bindString(10, userPosition);
         }
  
         String version = entity.getVersion();
         if (version != null) {
-            stmt.bindString(13, version);
+            stmt.bindString(11, version);
         }
     }
 
     @Override
     protected final void bindValues(SQLiteStatement stmt, User entity) {
         stmt.clearBindings();
-        stmt.bindLong(1, entity.getId());
- 
-        String testUpdate = entity.getTestUpdate();
-        if (testUpdate != null) {
-            stmt.bindString(2, testUpdate);
-        }
  
         String userId = entity.getUserId();
         if (userId != null) {
-            stmt.bindString(3, userId);
+            stmt.bindString(1, userId);
         }
  
         String userName = entity.getUserName();
         if (userName != null) {
-            stmt.bindString(4, userName);
+            stmt.bindString(2, userName);
         }
  
         String nickName = entity.getNickName();
         if (nickName != null) {
-            stmt.bindString(5, nickName);
+            stmt.bindString(3, nickName);
         }
  
         String aliasName = entity.getAliasName();
         if (aliasName != null) {
-            stmt.bindString(6, aliasName);
+            stmt.bindString(4, aliasName);
         }
  
         String userHead = entity.getUserHead();
         if (userHead != null) {
-            stmt.bindString(7, userHead);
+            stmt.bindString(5, userHead);
         }
  
         String userPhone = entity.getUserPhone();
         if (userPhone != null) {
-            stmt.bindString(8, userPhone);
+            stmt.bindString(6, userPhone);
         }
  
         String userEmail = entity.getUserEmail();
         if (userEmail != null) {
-            stmt.bindString(9, userEmail);
+            stmt.bindString(7, userEmail);
         }
  
         String birthday = entity.getBirthday();
         if (birthday != null) {
-            stmt.bindString(10, birthday);
+            stmt.bindString(8, birthday);
         }
  
         String userCompany = entity.getUserCompany();
         if (userCompany != null) {
-            stmt.bindString(11, userCompany);
+            stmt.bindString(9, userCompany);
         }
  
         String userPosition = entity.getUserPosition();
         if (userPosition != null) {
-            stmt.bindString(12, userPosition);
+            stmt.bindString(10, userPosition);
         }
  
         String version = entity.getVersion();
         if (version != null) {
-            stmt.bindString(13, version);
+            stmt.bindString(11, version);
         }
     }
 
     @Override
-    public Long readKey(Cursor cursor, int offset) {
-        return cursor.getLong(offset + 0);
+    public String readKey(Cursor cursor, int offset) {
+        return cursor.isNull(offset + 0) ? null : cursor.getString(offset + 0);
     }    
 
     @Override
     public User readEntity(Cursor cursor, int offset) {
         User entity = new User( //
-            cursor.getLong(offset + 0), // id
-            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // testUpdate
-            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // userId
-            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // userName
-            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // nickName
-            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // aliasName
-            cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // userHead
-            cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // userPhone
-            cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8), // userEmail
-            cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9), // birthday
-            cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10), // userCompany
-            cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11), // userPosition
-            cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12) // version
+            cursor.isNull(offset + 0) ? null : cursor.getString(offset + 0), // userId
+            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // userName
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // nickName
+            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // aliasName
+            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // userHead
+            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // userPhone
+            cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // userEmail
+            cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // birthday
+            cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8), // userCompany
+            cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9), // userPosition
+            cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10) // version
         );
         return entity;
     }
      
     @Override
     public void readEntity(Cursor cursor, User entity, int offset) {
-        entity.setId(cursor.getLong(offset + 0));
-        entity.setTestUpdate(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-        entity.setUserId(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
-        entity.setUserName(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
-        entity.setNickName(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
-        entity.setAliasName(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
-        entity.setUserHead(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
-        entity.setUserPhone(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
-        entity.setUserEmail(cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8));
-        entity.setBirthday(cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9));
-        entity.setUserCompany(cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10));
-        entity.setUserPosition(cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11));
-        entity.setVersion(cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12));
+        entity.setUserId(cursor.isNull(offset + 0) ? null : cursor.getString(offset + 0));
+        entity.setUserName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
+        entity.setNickName(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setAliasName(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
+        entity.setUserHead(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
+        entity.setUserPhone(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
+        entity.setUserEmail(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
+        entity.setBirthday(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
+        entity.setUserCompany(cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8));
+        entity.setUserPosition(cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9));
+        entity.setVersion(cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10));
      }
     
     @Override
-    protected final Long updateKeyAfterInsert(User entity, long rowId) {
-        entity.setId(rowId);
-        return rowId;
+    protected final String updateKeyAfterInsert(User entity, long rowId) {
+        return entity.getUserId();
     }
     
     @Override
-    public Long getKey(User entity) {
+    public String getKey(User entity) {
         if(entity != null) {
-            return entity.getId();
+            return entity.getUserId();
         } else {
             return null;
         }
@@ -262,7 +241,7 @@ public class UserDao extends AbstractDao<User, Long> {
 
     @Override
     public boolean hasKey(User entity) {
-        throw new UnsupportedOperationException("Unsupported for entities with a non-null key");
+        return entity.getUserId() != null;
     }
 
     @Override
