@@ -4,8 +4,23 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <!-- 标题栏样式 -->
+    <style name="title_style">
+        <item name="android:id">@id/app_title_id</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+    <!-- 一般的功能列表-->
+    <style name="normal_item_style">
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_height">@dimen/item_height</item>
+        <item name="android:background">@drawable/view_defulte_color</item>
+        <!--<item name="android:background">?android:attr/selectableItemBackground</item>-->
+    </style>
 </resources>

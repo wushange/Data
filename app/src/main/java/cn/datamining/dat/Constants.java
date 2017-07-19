@@ -1,4 +1,4 @@
-package cn.datamining.dat.utils;
+package cn.datamining.dat;
 
 /**
  * Created by wushange on 2017/7/12.

@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <cn.datamining.dat.widget.AppTitle
+        style="@style/title_style"
+        app:centerText="登录" />
 
     <Button
         android:id="@+id/btn_login"
@@ -13,12 +16,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="登录" />
-
-
-    <com.jude.easyrecyclerview.EasyRecyclerView
-        android:id="@+id/rv_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
 
 </LinearLayout>

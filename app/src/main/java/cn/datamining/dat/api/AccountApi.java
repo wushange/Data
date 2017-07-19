@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
-import cn.datamining.dat.utils.Constants;
+import cn.datamining.dat.Constants;
 import cn.datamining.dat.components.retrofit.Callback;
 import cn.datamining.dat.components.retrofit.ExceptionSubscriber;
 import cn.datamining.dat.db.User;

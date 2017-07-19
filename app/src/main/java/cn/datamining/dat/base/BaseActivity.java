@@ -101,7 +101,6 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseAct
     public void config(Bundle savedInstanceState) {
 
     }
-
     /**
      * 注入Injector
      */

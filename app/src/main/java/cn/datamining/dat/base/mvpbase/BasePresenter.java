@@ -1,4 +1,4 @@
-package cn.datamining.dat.base;
+package cn.datamining.dat.base.mvpbase;
 
 
 import org.reactivestreams.Subscription;
