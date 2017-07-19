@@ -1,6 +1,7 @@
 package cn.datamining.dat.di.component;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 
 import javax.inject.Singleton;
 
@@ -17,6 +18,7 @@ import dagger.Component;
 @Component(modules = {ApplicationModule.class, ApiModule.class, DBModule.class})
 public interface ApplicationComponent {
     Context getContext();
+    LayoutInflater getLayoutInflater();
     UserDao getUserDao();
     AccountApi getAccountApi();
 

@@ -1,4 +1,4 @@
-package cn.datamining.dat.bean;
+package cn.datamining.dat.components.retrofit;
 
 /**
  * Created by wanglj on 16/7/4.

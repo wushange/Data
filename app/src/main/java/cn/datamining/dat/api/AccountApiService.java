@@ -1,7 +1,7 @@
 package cn.datamining.dat.api;
 
 import cn.datamining.dat.db.User;
-import cn.datamining.dat.bean.BaseResponse;
+import cn.datamining.dat.components.retrofit.BaseResponse;
 import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

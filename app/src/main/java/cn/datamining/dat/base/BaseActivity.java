@@ -21,6 +21,7 @@ import android.widget.Toast;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 
+import butterknife.ButterKnife;
 import cn.datamining.dat.MyApplication;
 import cn.datamining.dat.di.component.ActivityComponent;
 import cn.datamining.dat.di.component.ApplicationComponent;
@@ -72,6 +73,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseAct
      */
         ViewGroup mContextView = (ViewGroup) LayoutInflater.from(this).inflate(bindLayout(), null);
         setContentView(mContextView);
+        ButterKnife.bind(this);
         // 将当前Activity压入栈
         mContextWR = new WeakReference<Activity>(this);
         mApplication.pushActivity(mContextWR);

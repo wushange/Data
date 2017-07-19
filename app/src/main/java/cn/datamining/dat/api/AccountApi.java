@@ -8,7 +8,7 @@ import cn.datamining.dat.utils.Constants;
 import cn.datamining.dat.components.retrofit.Callback;
 import cn.datamining.dat.components.retrofit.ExceptionSubscriber;
 import cn.datamining.dat.db.User;
-import cn.datamining.dat.bean.BaseResponseFunc;
+import cn.datamining.dat.components.retrofit.BaseResponseFunc;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;

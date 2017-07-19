@@ -1,4 +1,4 @@
-package cn.datamining.dat.bean;
+package cn.datamining.dat.components.retrofit;
 
 
 import com.blankj.utilcode.util.LogUtils;

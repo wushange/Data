@@ -3,7 +3,7 @@ package cn.datamining.dat.ui.login;
 import javax.inject.Inject;
 
 import cn.datamining.dat.api.AccountApi;
-import cn.datamining.dat.base.mvpbase.BasePresenter;
+import cn.datamining.dat.base.BasePresenter;
 import cn.datamining.dat.db.User;
 import cn.datamining.dat.db.UserDao;
 import cn.datamining.dat.utils.Constants;
